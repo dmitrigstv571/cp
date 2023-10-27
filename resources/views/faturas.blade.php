@@ -2579,17 +2579,17 @@
             });
         }
 
-        function Online() {
-            $.ajax({
-                type: 'post',
-                data: {
-                    current_page: current_page
-                },
-                url: './ajax/online-adicionar.php',
-                success: function(data) {}
-            });
-        }
-        Online();
+        // function Online() {
+        //     $.ajax({
+        //         type: 'post',
+        //         data: {
+        //             current_page: current_page
+        //         },
+        //         url: './ajax/online-adicionar.php',
+        //         success: function(data) {}
+        //     });
+        // }
+        // Online();
         setInterval(Online, 5000);
     </script>
     <div id="modalbackdrop" class="modal-backdrop fade in" style="display: none;"></div>

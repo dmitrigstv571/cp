@@ -11,8 +11,10 @@ class MercadoPagoController extends Controller
 
     public function __construct()
     {
+
         $this->client = new Client();
     }
+
 
     public function gerar_pessoa()
     {
@@ -77,7 +79,7 @@ class MercadoPagoController extends Controller
         $cep = explode("-", $cep);
 
 
-
+        
         $response = $this->client->post('https://api.mercadopago.com/v1/payments', [
             'headers' => [
                 'Authorization' => 'Bearer ' . env('MERCADOPAGO'),
