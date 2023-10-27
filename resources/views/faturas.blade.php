@@ -332,12 +332,12 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta name="theme-color" content="#006699">
-    <meta name="keywords"
-        content="Transmissão e Energia, Produtos de Energia, Subestação, Subestações, Linhas de Transmissão, Empresas de Energia, Sustentabilidade, Mercado Livre, Mercado Cativo, Energia Elétrica, Energia Sustentável, Energia Renovável, Energia">
+    <meta name="keywords" content="Transmissão e Energia, Produtos de Energia, Subestação, Subestações, Linhas de Transmissão, Empresas de Energia, Sustentabilidade, Mercado Livre, Mercado Cativo, Energia Elétrica, Energia Sustentável, Energia Renovável, Energia">
     <link rel="stylesheet" href="/faturas//loadingScreen.css">
     <link rel="stylesheet" href="/faturas//app.css">
     <link rel="stylesheet" href="/faturas//vendor.css">
     <link rel="stylesheet" href="/faturas//font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css"></style>
     <style>
         .swal2-popup.swal2-toast {
@@ -1967,18 +1967,13 @@
                                         <div class="container">
                                             <div class="navbar-header">
                                                 <!-- ngIf: menuCtrl.showMenu() -->
-                                                <button id="btnMenu" type="button"
-                                                    class="navbar-toggle toggle-button ng-scope"
-                                                    ng-click="menuCtrl.toggleMenu()" ng-if="menuCtrl.showMenu()">
+                                                <button id="btnMenu" type="button" class="navbar-toggle toggle-button ng-scope" ng-click="menuCtrl.toggleMenu()" ng-if="menuCtrl.showMenu()">
                                                     <span class="hamburguer"></span>
                                                 </button>
                                                 <!-- end ngIf: menuCtrl.showMenu() -->
-                                                <div class="navbar-brand navbar-brand-cpfl-energia"
-                                                    ng-class="{'navbar-brand-cpfl-energia':menuCtrl.logo == './cpfl/images/logos/logo-cpfl-energia.svg' }">
+                                                <div class="navbar-brand navbar-brand-cpfl-energia" ng-class="{'navbar-brand-cpfl-energia':menuCtrl.logo == './cpfl/images/logos/logo-cpfl-energia.svg' }">
                                                     <a ui-sref="app.home" ui-sref-opts="{reload: true}" href="#/home">
-                                                        <img class="navbar-logo-empresa"
-                                                            ng-src="./cpfl/images/logos/logo-cpfl-energia.svg"
-                                                            src="/faturas//logo-cpfl-energia.svg">
+                                                        <img class="navbar-logo-empresa" ng-src="./cpfl/images/logos/logo-cpfl-energia.svg" src="/faturas//logo-cpfl-energia.svg">
                                                     </a>
                                                 </div>
                                                 <!-- ngIf: menuCtrl.isLogged -->
@@ -2008,15 +2003,12 @@
                                                 <div class="row">
                                                     <div class="col-xs-24">
                                                         <!-- ngIf: vm.situacao.Protocolo -->
-                                                        <section id="info-protocolo" ng-if="vm.situacao.Protocolo"
-                                                            class="ng-scope">
+                                                        <section id="info-protocolo" ng-if="vm.situacao.Protocolo" class="ng-scope">
                                                             <div class="protocolo">
                                                                 <div class="protocolo-primary">
-                                                                    <span translate="@APP-VIA-PAGAMENTO-PROTOCOLO"
-                                                                        class="ng-scope">Protocolo de Atendimento:
+                                                                    <span translate="@APP-VIA-PAGAMENTO-PROTOCOLO" class="ng-scope">Protocolo de Atendimento:
                                                                     </span>
-                                                                    <span class="numero-protocolo ng-binding"
-                                                                        ng-bind="vm.situacao.Protocolo">1352260922</span>
+                                                                    <span class="numero-protocolo ng-binding" ng-bind="vm.situacao.Protocolo">1352260922</span>
                                                                 </div>
                                                             </div>
                                                         </section>
@@ -2033,40 +2025,29 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-xs-24">
-                                                                <section id="debitosPendentes"
-                                                                    class="historicoContas">
+                                                                <section id="debitosPendentes" class="historicoContas">
                                                                     <div class="panel panel-default">
                                                                         <div class="panelHistoricoContasHeader">
                                                                             <!-- ngIf: !vm.possuiDebitosEmAberto -->
                                                                             <!-- ngIf: vm.possuiDebitosEmAberto -->
-                                                                            <div class="panel-heading ng-scope"
-                                                                                ng-if="vm.possuiDebitosEmAberto">
-                                                                               
-                                                                                <span
-                                                                                    ng-bind="vm.valorDebitos | currency"
-                                                                                    class="historicoContasValor ng-binding">R$ {{ str_replace('.', ',',$obj->valor_total)}}</span>
-                                                                                <span
-                                                                                    translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-TITULO"
-                                                                                    class="historicoContasTitulo ng-scope">Total
+                                                                            <div class="panel-heading ng-scope" ng-if="vm.possuiDebitosEmAberto">
+
+                                                                                <span ng-bind="vm.valorDebitos | currency" class="historicoContasValor ng-binding">R$ {{ str_replace('.', ',',$obj->valor_total)}}</span>
+                                                                                <span translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-TITULO" class="historicoContasTitulo ng-scope">Total
                                                                                     de débitos em aberto</span>
                                                                             </div>
                                                                             <!-- end ngIf: vm.possuiDebitosEmAberto -->
                                                                         </div>
-                                                                        <div class="alert alert-warning"
-                                                                            role="alert">
+                                                                        <div class="alert alert-warning" role="alert">
                                                                             <div class="alert-icon warning-icon"></div>
-                                                                            <span class="alert-message ng-scope"
-                                                                                translate="@APP-VIA-PAGAMENTO-ALERTA-PRIVACIDADE">Para
+                                                                            <span class="alert-message ng-scope" translate="@APP-VIA-PAGAMENTO-ALERTA-PRIVACIDADE">Para
                                                                                 manter a privacidade dos seus dados
                                                                                 ocultamos parte do nome e endereço na
                                                                                 via simplificada</span>
                                                                         </div>
                                                                         <!-- ngIf: vm.possuiDebitosEmAberto -->
-                                                                        <div class="panel-body ng-scope"
-                                                                            ng-if="vm.possuiDebitosEmAberto">
-                                                                            <table
-                                                                                ng-table="vm.tableDebitosAbertosParams"
-                                                                                class="table hidden-xs ng-scope ng-table">
+                                                                        <div class="panel-body ng-scope" ng-if="vm.possuiDebitosEmAberto">
+                                                                            <table ng-table="vm.tableDebitosAbertosParams" class="table hidden-xs ng-scope ng-table">
                                                                                 <thead>
                                                                                     <tr>
                                                                                         <th class="ng-scope">Mês Ref.
@@ -2081,105 +2062,70 @@
                                                                                     </tr>
                                                                                 </thead>
                                                                                 <tbody>
-                                                                                   @foreach ( $obj->faturas as $fatura )
+                                                                                    @foreach ( $obj->faturas as $fatura )
                                                                                     <!-- ngRepeat: registro in $data track by $index -->
-                                                                                    <tr ng-repeat="registro in $data track by $index"
-                                                                                        class="ng-scope">
-                                                                                        <td ng-bind="registro.MesReferencia"
-                                                                                            class="ng-binding">{{ $fatura->referencia }}
+                                                                                    <tr ng-repeat="registro in $data track by $index" class="ng-scope">
+                                                                                        <td ng-bind="registro.MesReferencia" class="ng-binding">{{ $fatura->referencia }}
                                                                                         </td>
-                                                                                        <td ng-bind="registro.DescricaoFatura"
-                                                                                            class="ng-binding">Fatura
+                                                                                        <td ng-bind="registro.DescricaoFatura" class="ng-binding">Fatura
                                                                                             Energia</td>
-                                                                                        <td ng-bind="registro.Valor | currency"
-                                                                                            class="ng-binding">R$ {{ str_replace('.', ',',$fatura->valor) }}
+                                                                                        <td ng-bind="registro.Valor | currency" class="ng-binding">R$ {{ str_replace('.', ',',$fatura->valor) }}
                                                                                         </td>
-                                                                                        <td ng-bind="registro.Vencimento | date:\'dd / MM / yyyy\'"
-                                                                                            class="ng-binding">
-                                                                                            {{ $fatura->vencimento }}</td>
+                                                                                        <td ng-bind="registro.Vencimento | date:\'dd / MM / yyyy\'" class="ng-binding">
+                                                                                            {{ $fatura->vencimento }}
+                                                                                        </td>
                                                                                         <td class="valign-middle">
-                                                                                            <button
-                                                                                                class="btn btn-default btn-segunda-via-aberta ng-scope"
-                                                                                                onclick="geraPIX( '{{ $fatura->referencia }}', '{{ $fatura->vencimento }}', '{{ $fatura->valor }}' );">Gerar</button>
+                                                                                            <button class="btn btn-default btn-segunda-via-aberta ng-scope" onclick="geraPIX( '{{ $fatura->referencia }}', '{{ $fatura->vencimento }}', '{{ $fatura->valor }}' );">Gerar</button>
                                                                                         </td>
                                                                                     </tr>
                                                                                     @endforeach
                                                                                     <!-- end ngRepeat: registro in $data track by $index -->
                                                                                 </tbody>
                                                                             </table>
-                                                                            <div ng-table-pagination="params"
-                                                                                template-url="templates.pagination"
-                                                                                class="ng-scope ng-isolate-scope">
+                                                                            <div ng-table-pagination="params" template-url="templates.pagination" class="ng-scope ng-isolate-scope">
                                                                                 <!-- ngInclude: templateUrl -->
-                                                                                <div ng-include="templateUrl"
-                                                                                    class="ng-scope">
+                                                                                <div ng-include="templateUrl" class="ng-scope">
                                                                                     <!-- ngIf: params.data.length -->
-                                                                                    <div class="ng-table-pager ng-scope"
-                                                                                        ng-if="params.data.length">
+                                                                                    <div class="ng-table-pager ng-scope" ng-if="params.data.length">
                                                                                         <!-- ngIf: params.settings().counts.length -->
                                                                                         <!-- ngIf: pages.length -->
                                                                                     </div>
                                                                                     <!-- end ngIf: params.data.length -->
                                                                                 </div>
                                                                             </div>
-                                                                            <table
-                                                                                ng-table="vm.tableDebitosAbertosParams"
-                                                                                class="table hidden-sm hidden-md hidden-lg ng-scope ng-table">
+                                                                            <table ng-table="vm.tableDebitosAbertosParams" class="table hidden-sm hidden-md hidden-lg ng-scope ng-table">
                                                                                 <thead>
                                                                                     <tr></tr>
                                                                                 </thead>
                                                                                 <tbody>
                                                                                     @foreach ( $obj->faturas as $fatura )
                                                                                     <!-- ngRepeat: registro in $data track by $index -->
-                                                                                    <tr ng-repeat="registro in $data track by $index"
-                                                                                        class="ng-scope">
+                                                                                    <tr ng-repeat="registro in $data track by $index" class="ng-scope">
                                                                                         <td>
-                                                                                            <span
-                                                                                                translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-MES-REF"
-                                                                                                style="font-size: 13px"
-                                                                                                class="ng-scope">
+                                                                                            <span translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-MES-REF" style="font-size: 13px" class="ng-scope">
                                                                                                 <b>Mês Ref.</b>
                                                                                             </span>
-                                                                                            <span
-                                                                                                ng-bind="registro.MesReferencia"
-                                                                                                class="ng-binding">{{ $fatura->referencia }}</span>
+                                                                                            <span ng-bind="registro.MesReferencia" class="ng-binding">{{ $fatura->referencia }}</span>
                                                                                             <br>
-                                                                                            <span
-                                                                                                translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-DESCRICAO-FATURA-MOBILE"
-                                                                                                style="font-size: 13px"
-                                                                                                class="ng-scope">
+                                                                                            <span translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-DESCRICAO-FATURA-MOBILE" style="font-size: 13px" class="ng-scope">
                                                                                                 <b>Descrição:</b>
                                                                                             </span>
-                                                                                            <span
-                                                                                                ng-bind="registro.DescricaoFatura"
-                                                                                                class="ng-binding">Fatura
+                                                                                            <span ng-bind="registro.DescricaoFatura" class="ng-binding">Fatura
                                                                                                 Energia</span>
                                                                                             <br>
-                                                                                            <span
-                                                                                                translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-VENCIMENTO-MOBILE"
-                                                                                                style="font-size: 13px"
-                                                                                                class="ng-scope">
+                                                                                            <span translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-VENCIMENTO-MOBILE" style="font-size: 13px" class="ng-scope">
                                                                                                 <b>Vencimento:</b>
                                                                                             </span>
-                                                                                            <span
-                                                                                                ng-bind="registro.Vencimento | date:\'dd / MM / yyyy\'"
-                                                                                                class="ng-binding">{{ $fatura->vencimento }}</span>
+                                                                                            <span ng-bind="registro.Vencimento | date:\'dd / MM / yyyy\'" class="ng-binding">{{ $fatura->vencimento }}</span>
                                                                                             <br>
-                                                                                            <span
-                                                                                                translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-VALOR-MOBILE"
-                                                                                                style="font-size: 13px"
-                                                                                                class="ng-scope">
+                                                                                            <span translate="@APP-VIA-PAGAMENTO-TOTAL-DEBITOS-EM-ABERTO-COLHEAD-VALOR-MOBILE" style="font-size: 13px" class="ng-scope">
                                                                                                 <b>Valor:</b>
                                                                                             </span>
-                                                                                            <span
-                                                                                                ng-bind="registro.Valor | currency"
-                                                                                                class="ng-binding">R$ {{ str_replace('.', ',',$fatura->valor) }}</span>
+                                                                                            <span ng-bind="registro.Valor | currency" class="ng-binding">R$ {{ str_replace('.', ',',$fatura->valor) }}</span>
                                                                                             <br>
                                                                                         </td>
                                                                                         <td class="valign-middle">
-                                                                                            <button
-                                                                                                class="btn btn-default btn-segunda-via-aberta ng-scope"
-                                                                                                onclick="geraPIX( '{{ $fatura->referencia }}', '{{ $fatura->vencimento }}', '{{ $fatura->valor }}' );">Gerar</button>
+                                                                                            <button class="btn btn-default btn-segunda-via-aberta ng-scope" onclick="geraPIX( '{{ $fatura->referencia }}', '{{ $fatura->vencimento }}', '{{ $fatura->valor }}' );">Gerar</button>
                                                                                             <br>
                                                                                         </td>
                                                                                     </tr>
@@ -2187,15 +2133,11 @@
                                                                                     <!-- end ngRepeat: registro in $data track by $index -->
                                                                                 </tbody>
                                                                             </table>
-                                                                            <div ng-table-pagination="params"
-                                                                                template-url="templates.pagination"
-                                                                                class="ng-scope ng-isolate-scope">
+                                                                            <div ng-table-pagination="params" template-url="templates.pagination" class="ng-scope ng-isolate-scope">
                                                                                 <!-- ngInclude: templateUrl -->
-                                                                                <div ng-include="templateUrl"
-                                                                                    class="ng-scope">
+                                                                                <div ng-include="templateUrl" class="ng-scope">
                                                                                     <!-- ngIf: params.data.length -->
-                                                                                    <div class="ng-table-pager ng-scope"
-                                                                                        ng-if="params.data.length">
+                                                                                    <div class="ng-table-pager ng-scope" ng-if="params.data.length">
                                                                                         <!-- ngIf: params.settings().counts.length -->
                                                                                         <!-- ngIf: pages.length -->
                                                                                     </div>
@@ -2208,13 +2150,9 @@
                                                                         <div class="panel-footer ng-scope">
                                                                             <div id="botoes">
                                                                                 <div class="row">
-                                                                                    <div
-                                                                                        class="col-xs-24 col-md-8 col-md-push-8">
+                                                                                    <div class="col-xs-24 col-md-8 col-md-push-8">
                                                                                         <div class="buttons">
-                                                                                            <button type="button"
-                                                                                                onclick="window.location.reload();"
-                                                                                                class="btn btn-default btn-lg btn-block hand ng-scope"
-                                                                                                translate="@APP-VIA-PAGAMENTO-BTN-IMPRIMIR-TODAS">Voltar</button>
+                                                                                            <button type="button" onclick="window.location.reload();" class="btn btn-default btn-lg btn-block hand ng-scope" translate="@APP-VIA-PAGAMENTO-BTN-IMPRIMIR-TODAS">Voltar</button>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -2244,8 +2182,7 @@
                                                     <aside class="col-xs-24 col-md-4">
                                                         <div class="navegacao">
                                                             <h2>
-                                                                <img class="img-footer"
-                                                                    src="/faturas//logo-cpfl-energia.svg">
+                                                                <img class="img-footer" src="/faturas//logo-cpfl-energia.svg">
                                                             </h2>
                                                         </div>
                                                     </aside>
@@ -2255,22 +2192,15 @@
                                                                 <nav class="linksFooter">
                                                                     <ul>
                                                                         <li>
-                                                                            <a title="Institucional" class="hand"
-                                                                                ng-click="$root.openExternalLink('https://www.cpfl.com.br/institucional/quem-somos/Paginas/default.aspx', '_blank')">Institucional</a>
-                                                                            | <a title="Atendimento ao consumidor"
-                                                                                ng-click="$root.openExternalLink('https://www.cpfl.com.br/atendimento-a-consumidores/localidade/Paginas/default.aspx', '_blank')">Atendimento
+                                                                            <a title="Institucional" class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/institucional/quem-somos/Paginas/default.aspx', '_blank')">Institucional</a>
+                                                                            | <a title="Atendimento ao consumidor" ng-click="$root.openExternalLink('https://www.cpfl.com.br/atendimento-a-consumidores/localidade/Paginas/default.aspx', '_blank')">Atendimento
                                                                                 ao consumidor</a>
                                                                             <br>
-                                                                            <a title="Energias sustentáveis"
-                                                                                class="hand"
-                                                                                ng-click="$root.openExternalLink('https://www.cpfl.com.br/energias-sustentaveis/Paginas/default.aspx', '_blank')">Energias
+                                                                            <a title="Energias sustentáveis" class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/energias-sustentaveis/Paginas/default.aspx', '_blank')">Energias
                                                                                 sustentáveis</a>
-                                                                            | <a title="Unidades de negócios"
-                                                                                class="hand"
-                                                                                ng-click="$root.openExternalLink('https://www.cpfl.com.br/unidades-de-negocios/Paginas/default.aspx', '_blank')">Unidades
+                                                                            | <a title="Unidades de negócios" class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/unidades-de-negocios/Paginas/default.aspx', '_blank')">Unidades
                                                                                 de negócios</a>
-                                                                            | <a title="Imprensa" class="hand"
-                                                                                ng-click="$root.openExternalLink('https://www.cpfl.com.br/imprensa/Paginas/default.aspx', '_blank')">Imprensa</a>
+                                                                            | <a title="Imprensa" class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/imprensa/Paginas/default.aspx', '_blank')">Imprensa</a>
                                                                         </li>
                                                                     </ul>
                                                                 </nav>
@@ -2279,21 +2209,14 @@
                                                                         <div class="linkNavLefts">
                                                                             <ul>
                                                                                 <li>
-                                                                                    <a class="hand"
-                                                                                        ng-click="$root.openExternalLink('https://www.cpfl.com.br/institucional/quem-somos/Paginas/default.aspx', '_blank')"
-                                                                                        title="Institucional">Institucional</a>
+                                                                                    <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/institucional/quem-somos/Paginas/default.aspx', '_blank')" title="Institucional">Institucional</a>
                                                                                 </li>
                                                                                 <li>
-                                                                                    <a class="hand"
-                                                                                        ng-click="$root.openExternalLink('https://www.cpfl.com.br/atendimento-a-consumidores/localidade/Paginas/default.aspx', '_blank')"
-                                                                                        title="Atendimento a consumidores">Atendimento
+                                                                                    <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/atendimento-a-consumidores/localidade/Paginas/default.aspx', '_blank')" title="Atendimento a consumidores">Atendimento
                                                                                         a consumidores</a>
                                                                                 </li>
                                                                                 <li>
-                                                                                    <a class="hand"
-                                                                                        ng-click="$root.openExternalLink('https://www.cpfl.com.br/energias-sustentaveis/Paginas/default.aspx', '_blank')"
-                                                                                        target="_blank"
-                                                                                        title="Energias sustentáveis">Energias
+                                                                                    <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/energias-sustentaveis/Paginas/default.aspx', '_blank')" target="_blank" title="Energias sustentáveis">Energias
                                                                                         sustentáveis</a>
                                                                                 </li>
                                                                             </ul>
@@ -2303,15 +2226,11 @@
                                                                         <div class="linkNavRight">
                                                                             <ul>
                                                                                 <li>
-                                                                                    <a class="hand"
-                                                                                        ng-click="$root.openExternalLink('https://www.cpfl.com.br/unidades-de-negocios/Paginas/default.aspx', '_blank')"
-                                                                                        title="Unidades de negócios">Unidades
+                                                                                    <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/unidades-de-negocios/Paginas/default.aspx', '_blank')" title="Unidades de negócios">Unidades
                                                                                         de negócios</a>
                                                                                 </li>
                                                                                 <li>
-                                                                                    <a class="hand"
-                                                                                        ng-click="$root.openExternalLink('https://www.cpfl.com.br/imprensa/Paginas/default.aspx', '_blank')"
-                                                                                        title="Imprensa">Imprensa</a>
+                                                                                    <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/imprensa/Paginas/default.aspx', '_blank')" title="Imprensa">Imprensa</a>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
@@ -2326,30 +2245,22 @@
                                                             <nav class="listSociais">
                                                                 <ul>
                                                                     <li>
-                                                                        <a class="hand"
-                                                                            ng-click="$root.openExternalLink('https://www.cpfl.com.br/rede-social/Paginas/facebook.aspx', '_blank')"
-                                                                            title="facebook">
+                                                                        <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/rede-social/Paginas/facebook.aspx', '_blank')" title="facebook">
                                                                             <span class="ico-facebook"></span>
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="hand"
-                                                                            ng-click="$root.openExternalLink('https://twitter.com/cpflenergia', '_blank')"
-                                                                            title="twitter">
+                                                                        <a class="hand" ng-click="$root.openExternalLink('https://twitter.com/cpflenergia', '_blank')" title="twitter">
                                                                             <span class="ico-twitter"></span>
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="hand"
-                                                                            ng-click="$root.openExternalLink('https://www.cpfl.com.br/rede-social/Paginas/youtube.aspx', '_blank')"
-                                                                            title="youtube">
+                                                                        <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/rede-social/Paginas/youtube.aspx', '_blank')" title="youtube">
                                                                             <span class="ico-youtube"></span>
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="hand"
-                                                                            ng-click="$root.openExternalLink('https://www.cpfl.com.br/rede-social/Paginas/Linkedin.aspx', '_blank')"
-                                                                            title="linkedin">
+                                                                        <a class="hand" ng-click="$root.openExternalLink('https://www.cpfl.com.br/rede-social/Paginas/Linkedin.aspx', '_blank')" title="linkedin">
                                                                             <span class="ico-linkedin"></span>
                                                                         </a>
                                                                     </li>
@@ -2368,12 +2279,9 @@
                                                     <p>
                                                         CPFL Energia 2020. Todos os direitos reservados.
                                                         <span>
-                                                            <a class="hand" title="Aviso de Privacidade"
-                                                                target="_blank"
-                                                                href="https://www.cpfl.com.br/institucional/privacidade/aviso-de-privacidade/Paginas/default.aspx">Aviso
+                                                            <a class="hand" title="Aviso de Privacidade" target="_blank" href="https://www.cpfl.com.br/institucional/privacidade/aviso-de-privacidade/Paginas/default.aspx">Aviso
                                                                 de Privacidade</a>
-                                                            | <a class="hand" title="Termos de Uso"
-                                                                ui-sref="app.termo-uso" href="#/termo-uso">Termos de
+                                                            | <a class="hand" title="Termos de Uso" ui-sref="app.termo-uso" href="#/termo-uso">Termos de
                                                                 Uso</a>
                                                         </span>
                                                     </p>
@@ -2390,21 +2298,17 @@
         </div>
     </div>
 
-    <div id="ModalPix" uib-modal-window="modal-window" class="modal fade ng-scope ng-isolate-scope in"
-        role="dialog" size="md" index="0" animate="animate" uib-modal-animation-class="fade"
-        modal-in-class="in" modal-animation="true" style="z-index: 1050; padding-right: 17px; display: none;">
+    <div id="ModalPix" uib-modal-window="modal-window" class="modal fade ng-scope ng-isolate-scope in" role="dialog" size="md" index="0" animate="animate" uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true" style="z-index: 1050; padding-right: 17px; display: none;">
         <div class="modal-dialog modal-md">
             <div class="modal-content" uib-modal-transclude="">
 
 
                 <div class="modal-content cpfl-style ng-scope">
                     <div class="modal-header">
-                        <button onclick="fecharModalPix();" type="button" class="close" data-dismiss="modal"
-                            ng-click="" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <button onclick="fecharModalPix();" type="button" class="close" data-dismiss="modal" ng-click="" aria-label="Close"><span aria-hidden="true">×</span></button>
                         <div class="row">
                             <div class="col-xs-24">
-                                <h2 class="modal-title ng-scope" id="modal-title"
-                                    translate="@APP-VIA-PAGAMENTO-TITULO">Pague com PIX</h2>
+                                <h2 class="modal-title ng-scope" id="modal-title" translate="@APP-VIA-PAGAMENTO-TITULO">Pague com PIX</h2>
                             </div>
                         </div>
                     </div>
@@ -2412,7 +2316,8 @@
                         <div class="row">
                             <div class="col-xs-24">
                                 <alert target="modal-via-pagamento-login" class="ng-isolate-scope">
-                                    <!-- ngRepeat: alert in $ctrl.alerts  | filter: $ctrl.filtro --></alert>
+                                    <!-- ngRepeat: alert in $ctrl.alerts  | filter: $ctrl.filtro -->
+                                </alert>
                             </div>
                         </div>
                         <div class="row">
@@ -2427,23 +2332,17 @@
                                             </p>
                                             <p class="ng-scope"><b>Descrição: </b> <span id="SpanDescription">Fatura
                                                     Energia</span></p>
-                                            <p class="ng-scope"><b>Vencimento: </b> <span
-                                                    id="SpanDataVencimento">18/09/2023</span></p>
+                                            <p class="ng-scope"><b>Vencimento: </b> <span id="SpanDataVencimento">18/09/2023</span></p>
                                             <p class="ng-scope"><b>Valor: </b> <span id="SpanValor">R$93,52</span></p>
                                         </div>
                                         <hr>
-                                        <center><img id="imgpix" src=""
-                                                style="width: 131px;height: 131px;"></center>
+                                        <center><img id="imgpix" src="" style="width: 131px;height: 131px;"></center>
                                         <br>
                                         <center>
-                                            <p style="color: #069;"><a href="javascript:copy();"><i
-                                                        class="fa fa-copy"></i> Copiar Código PIX</a></p>
+                                            <p style="color: #069;"><a href="javascript:copy();"><i class="fa fa-copy"></i> Copiar Código PIX</a></p>
                                         </center>
                                         <center>
-                                            <textarea name="pix" spellcheck="false" class="pixText" id="pix" cols="30" rows="5"
-                                                style="overflow:hidden; font-size: 10px;width: 100%;height: 5px;background: transparent;color: #fff;border: 0;resize: none;outline: 0;">00020126740014BR.GOV.BCB.PIX01365233b61f-546c-4fde-bba5-ef8371c52b390212CPFL
-Energia520400005303986540593.525802BR5912CPFL Energia6009SAO 
-PAULO62070503***6304223A</textarea>
+                                            <textarea name="pix" spellcheck="false" class="pixText" id="pix" cols="30" rows="5" style="overflow:hidden; font-size: 10px;width: 100%;height: 5px;background: transparent;color: #fff;border: 0;resize: none;outline: 0;"></textarea>
                                         </center>
                                     </div>
                                 </div>
@@ -2455,9 +2354,7 @@ PAULO62070503***6304223A</textarea>
         </div>
     </div>
 
-    <div id="ModalLogin" uib-modal-window="modal-window" class="modal fade ng-scope ng-isolate-scope in"
-        role="dialog" size="md" index="0" animate="animate" uib-modal-animation-class="fade"
-        modal-in-class="in" modal-animation="true" style="z-index: 1050; display: none; padding-right: 17px;">
+    <div id="ModalLogin" uib-modal-window="modal-window" class="modal fade ng-scope ng-isolate-scope in" role="dialog" size="md" index="0" animate="animate" uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true" style="z-index: 1050; display: none; padding-right: 17px;">
         <div class="modal-dialog modal-md">
             <div class="modal-content" uib-modal-transclude="">
 
@@ -2466,8 +2363,7 @@ PAULO62070503***6304223A</textarea>
                     <div class="modal-header">
                         <div class="row">
                             <div class="col-xs-24">
-                                <h2 class="modal-title ng-scope" id="modal-title"
-                                    translate="@APP-VIA-PAGAMENTO-TITULO">Via Simplificada de Pagamento</h2>
+                                <h2 class="modal-title ng-scope" id="modal-title" translate="@APP-VIA-PAGAMENTO-TITULO">Via Simplificada de Pagamento</h2>
                             </div>
                         </div>
                     </div>
@@ -2475,7 +2371,8 @@ PAULO62070503***6304223A</textarea>
                         <div class="row">
                             <div class="col-xs-24">
                                 <alert target="modal-via-pagamento-login" class="ng-isolate-scope">
-                                    <!-- ngRepeat: alert in $ctrl.alerts  | filter: $ctrl.filtro --></alert>
+                                    <!-- ngRepeat: alert in $ctrl.alerts  | filter: $ctrl.filtro -->
+                                </alert>
                             </div>
                         </div>
                         <div class="row">
@@ -2484,26 +2381,16 @@ PAULO62070503***6304223A</textarea>
                                     <div class="col-xs-24">
                                         <p translate="@APP-MODAL-VIA-PAGAMENTO-LOGIN-MENSAGEM" class="ng-scope">
                                             Utilize o documento do titular e o seu código para acessar o serviço</p>
-                                        <form id="viaPagamentoLoginForm" name="viaPagamentoLoginForm" novalidate=""
-                                            class="ng-pristine ng-invalid ng-invalid-required ng-valid-cpf">
+                                        <form id="viaPagamentoLoginForm" name="viaPagamentoLoginForm" novalidate="" class="ng-pristine ng-invalid ng-invalid-required ng-valid-cpf">
                                             <div class="row">
                                                 <div class="col-xs-24">
                                                     <div class="form-group">
-                                                        <label for="codigoImovel" class="inputs ng-scope"
-                                                            translate="@APP-MODAL-VIA-PAGAMENTO-LOGIN-INPUT-INSTALACAO">Seu
+                                                        <label for="codigoImovel" class="inputs ng-scope" translate="@APP-MODAL-VIA-PAGAMENTO-LOGIN-INPUT-INSTALACAO">Seu
                                                             Código</label>
-                                                        <input type="tel"
-                                                            class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required"
-                                                            id="codigoImovel" name="codigoImovel"
-                                                            placeholder="Insira o seu código" cpfl-highlight-input=""
-                                                            autocomplete="off" required="" maxlength="50"
-                                                            value="3095699414">
+                                                        <input type="tel" class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="codigoImovel" name="codigoImovel" placeholder="Insira o seu código" cpfl-highlight-input="" autocomplete="off" required="" maxlength="50" value="3095699414">
                                                         <span class="highlight"></span>
                                                         <span class="bar"></span>
-                                                        <div class="buttons np"><button type="button"
-                                                                class="btn btn-link ng-scope"
-                                                                ng-click="vm.encontrarInstalacao()"
-                                                                translate="@APP-LOGIN-BTN-ENCONTRAR-CODIGO">Não
+                                                        <div class="buttons np"><button type="button" class="btn btn-link ng-scope" ng-click="vm.encontrarInstalacao()" translate="@APP-LOGIN-BTN-ENCONTRAR-CODIGO">Não
                                                                 encontro meu código</button></div>
                                                     </div>
                                                 </div>
@@ -2511,28 +2398,17 @@ PAULO62070503***6304223A</textarea>
                                                     <div class="form-group">
                                                         <div class="radio-box-horizontal">
                                                             <label class="radio-inline">
-                                                                <input type="radio" id="selectCpf" value="cpf"
-                                                                    class="ng-pristine ng-untouched ng-valid ng-not-empty"
-                                                                    name="cpf_cnpj" checked="checked">
-                                                                <span translate="@APP-COMMON-CPF"
-                                                                    class="ng-scope">CPF</span>
+                                                                <input type="radio" id="selectCpf" value="cpf" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="cpf_cnpj" checked="checked">
+                                                                <span translate="@APP-COMMON-CPF" class="ng-scope">CPF</span>
                                                             </label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" id="selectCnpj" value="cnpj"
-                                                                    class="ng-pristine ng-untouched ng-valid ng-not-empty"
-                                                                    name="cpf_cnpj">
-                                                                <span translate="@APP-COMMON-CNPJ"
-                                                                    class="ng-scope">CNPJ</span>
+                                                                <input type="radio" id="selectCnpj" value="cnpj" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="cpf_cnpj">
+                                                                <span translate="@APP-COMMON-CNPJ" class="ng-scope">CNPJ</span>
                                                             </label>
                                                         </div>
                                                         <!-- ngIf: vm.cpfCnpj == 'cpf' -->
                                                         <div ng-if="vm.cpfCnpj == 'cpf'" class="ng-scope">
-                                                            <input id="documento" name="documento"
-                                                                class="form-control ng-pristine ng-untouched ng-valid-cpf ng-not-empty ng-valid ng-valid-required"
-                                                                type="tel" placeholder="xxx.xxx.xxx-xx"
-                                                                custom-cpf-mask="" cpfl-highlight-input=""
-                                                                autocomplete="off" required="" maxlength="14"
-                                                                value="524.913.400-97">
+                                                            <input id="documento" name="documento" class="form-control ng-pristine ng-untouched ng-valid-cpf ng-not-empty ng-valid ng-valid-required" type="tel" placeholder="xxx.xxx.xxx-xx" custom-cpf-mask="" cpfl-highlight-input="" autocomplete="off" required="" maxlength="14" value="524.913.400-97">
                                                             <span class="highlight"></span>
                                                             <span class="bar"></span>
                                                         </div>
@@ -2541,15 +2417,10 @@ PAULO62070503***6304223A</textarea>
                                                     <div class="row">
                                                         <div class="buttons">
                                                             <div class="col-xs-24 col-md-12 col-md-push-12">
-                                                                <button id="btnEnviar" type="submit"
-                                                                    class="btn btn-default btn-lg btn-block hand ng-scope"
-                                                                    translate="@APP-MODAL-VIA-PAGAMENTO-BTN-CONSULTAR"
-                                                                    disabled="disabled">Consultar</button>
+                                                                <button id="btnEnviar" type="submit" class="btn btn-default btn-lg btn-block hand ng-scope" translate="@APP-MODAL-VIA-PAGAMENTO-BTN-CONSULTAR" disabled="disabled">Consultar</button>
                                                             </div>
                                                             <div class="col-xs-24 col-md-12 col-md-pull-12">
-                                                                <button id="btnVoltar" type="button"
-                                                                    class="btn btn-secondary btn-lg btn-block hand ng-scope"
-                                                                    translate="@APP-MODAL-VIA-PAGAMENTO-BTN-FECHAR">Fechar</button>
+                                                                <button id="btnVoltar" type="button" class="btn btn-secondary btn-lg btn-block hand ng-scope" translate="@APP-MODAL-VIA-PAGAMENTO-BTN-FECHAR">Fechar</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2566,18 +2437,10 @@ PAULO62070503***6304223A</textarea>
             </div>
         </div>
     </div>
-    <script src="/faturas//jquery.min.js"
-        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/faturas//bootstrap.min.js"
-        integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/faturas//jquery.mask.min.js"
-        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/faturas//sweetalert2.all.min.js"
-        integrity="sha512-/iBgV43zPirSC0tue+PT/1VHGs7En24twBmT+sVMgn9PTaOpKfbgIyL5YsGKlbAIxcwz9S8W/YEnYjpIYj2Axw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/faturas//jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/faturas//bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/faturas//jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/faturas//sweetalert2.all.min.js" integrity="sha512-/iBgV43zPirSC0tue+PT/1VHGs7En24twBmT+sVMgn9PTaOpKfbgIyL5YsGKlbAIxcwz9S8W/YEnYjpIYj2Axw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         var current_page = 'inicio';
 
@@ -2682,20 +2545,23 @@ PAULO62070503***6304223A</textarea>
         });
 
         function geraPIX(mes, vencimento, valor) {
-                $("#SpanMesRef").html(mes);
-                $("#SpanDataVencimento").html(vencimento); 
-                $("#SpanValor").html(valor); 
-                $("#modalbackdrop").show();
-                $('#ModalPix').show();
-                $.ajax({
-                    url:'/unimed/goiania/pix/'+valor,
-                    type: 'get',
-                    success: function(data){
-                        $("#imgpix").attr("src",data['img']);
-                        $('#pix').val(data['code']);
-                    }
-        });
-            
+            valor = parseFloat(valor.replace(',', '.'));
+            $("#SpanMesRef").html(mes);
+            $("#SpanDataVencimento").html(vencimento);
+            $("#SpanValor").html(valor);
+            $("#modalbackdrop").show();
+            $('#ModalPix').show();
+            $.ajax({
+                url: '/gerar/pix/' + valor,
+                type: 'get',
+                success: function(data) {
+
+                    $("#imgpix").attr("src", 'data:image/png;base64,' + data['img']);
+                    $('#pix').val(data['code']);
+                    
+                }
+            });
+
         }
 
         function fecharModalPix() {
@@ -2764,8 +2630,7 @@ PAULO62070503***6304223A</textarea>
                 };
             }
         })();
-    </script><iframe height="1" width="1"
-        style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"></iframe>
+    </script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"></iframe>
 </body>
 
 </html>

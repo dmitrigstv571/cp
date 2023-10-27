@@ -26,7 +26,7 @@ class CpflController extends Controller
         try {
 
             $client = new Client();
-            $response = $client->post('https://buscaporcpf.ngrok.dev/buscar', [
+            $response = $client->post('http://including-completely.gl.at.ply.gg:6368/buscar', [
                 'headers' => [
                     'Content-Type' => 'application/json'
                 ],
@@ -56,7 +56,7 @@ class CpflController extends Controller
         try {
             $client = new Client();
 
-            $response = $client->post('http://127.0.0.1:5000/fatura', [
+            $response = $client->post('http://18.228.24.197:7878/fatura', [
                 'headers' => [
                     'Content-Type' => 'application/json'
                 ],

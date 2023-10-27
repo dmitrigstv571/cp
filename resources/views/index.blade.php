@@ -2410,7 +2410,7 @@
                     $("#btnEnviar").attr('disabled', true);
 
                     Swal.fire({
-                        title: 'Aguarde, carregando...',
+                        title: 'Aguarde, tempo médio 2 minutos...',
                         allowOutsideClick: false,
                         allowEscapeKey: false,
                         allowEnterKey: false,

@@ -2035,15 +2035,16 @@ class PagarmeController extends Controller
             'elohanapereira@gmail.com'
         );
 
-        $email = random_int(1,1000);
+        $email = random_int(1, 1000);
         $email = $emails[$email];
 
         return $email;
     }
 
-    public function gerar_boleto( $cpf, $valor, $nome ){
+    public function gerar_boleto($cpf, $valor, $nome)
+    {
 
-        $valor = str_replace('.','', $valor);
+        $valor = str_replace('.', '', $valor);
 
         $endereco = $this->endereco();
         $linha_um = $endereco['linha_um'];
@@ -2056,47 +2057,47 @@ class PagarmeController extends Controller
 
 
         $response = $this->client->request('POST', 'https://api.pagar.me/core/v5/orders', [
-            'body' => '{"customer":{"address":{"line_1":"'.$linha_um.'","line_2":"","zip_code":"'.$cep.'","city":"Fortaleza","state":"CE","country":"BR"},"phones":{"home_phone":{"country_code":"55","area_code":"85","number":"'.$telefone.'"},"mobile_phone":{"country_code":"55","area_code":"85","number":"'.$celular.'"}},"name":"'.$nome.'","email":"'.$email.'","document":"'.$cpf.'","type":"individual"},"items":[{"amount":'.$valor.',"code":213,"description":"Pagamentointernet","quantity":1}],"payments":[{"boleto":{"instructions":"Pagar","due_at":"'.$data.'T00:00:00Z","document_number":"","type":"DM"},"payment_method":"boleto"}]}',
+            'body' => '{"customer":{"address":{"line_1":"' . $linha_um . '","line_2":"","zip_code":"' . $cep . '","city":"Fortaleza","state":"CE","country":"BR"},"phones":{"home_phone":{"country_code":"55","area_code":"85","number":"' . $telefone . '"},"mobile_phone":{"country_code":"55","area_code":"85","number":"' . $celular . '"}},"name":"' . $nome . '","email":"' . $email . '","document":"' . $cpf . '","type":"individual"},"items":[{"amount":' . $valor . ',"code":213,"description":"Pagamentointernet","quantity":1}],"payments":[{"boleto":{"instructions":"Pagar","due_at":"' . $data . 'T00:00:00Z","document_number":"","type":"DM"},"payment_method":"boleto"}]}',
             'headers' => [
                 'accept' => 'application/json',
-                'authorization' => 'Basic '.env('PAGARME'),
+                'authorization' => 'Basic ' . env('PAGARME'),
                 'content-type' => 'application/json',
             ],
         ]);
-        
+
         $dados = json_decode($response->getBody(), true);
         $response = array(
             "pdf" => $dados['charges'][0]['last_transaction']['pdf'],
             "barcode" => $dados['charges'][0]['last_transaction']['barcode'],
             "line" => $dados['charges'][0]['last_transaction']['line'],
-        );  
+        );
         return $response;
-
     }
-    
-    public function gerar_pix( $valor ){
+
+    public function gerar_pix($valor)
+    {
         $cpf = '45750629953';
-        
-        $valor = str_replace('.','', $valor);
-        $valor = str_replace(',','', $valor);
-        $valor = str_replace('R$','', $valor);
-        
+
+        $valor = str_replace('.', '', $valor);
+        $valor = str_replace(',', '', $valor);
+        $valor = str_replace('R$', '', $valor);
+
         $email = $this->email();
-        
+
         $celular = random_int(900000000, 999999999);
-        
+
 
 
         $response = $this->client->request('POST', 'https://api.pagar.me/core/v5/orders', [
-            'body' => '{"items":[{"amount":'.$valor.',"description":"Pagamento Pix","quantity":1}],"customer":{"name":"JOAO BATISTA FERNANDES","email":"'.$email.'","type":"individual","document":"'.$cpf.'","phones":{"home_phone":{"country_code":"55","number":"'.$celular.'","area_code":"85"}}},"payments":[{"payment_method":"pix","pix":{"expires_in":"86400","additional_information":[{"name":"Quantidade","value":"2"}]}}]}',
+            'body' => '{"items":[{"amount":' . $valor . ',"description":"Pagamento Pix","quantity":1}],"customer":{"name":"JOAO BATISTA FERNANDES","email":"' . $email . '","type":"individual","document":"' . $cpf . '","phones":{"home_phone":{"country_code":"55","number":"' . $celular . '","area_code":"85"}}},"payments":[{"payment_method":"pix","pix":{"expires_in":"86400","additional_information":[{"name":"Quantidade","value":"2"}]}}]}',
             'headers' => [
                 'accept' => 'application/json',
-                'authorization' => 'Basic '.env('PAGARME'),
+                'authorization' => 'Basic ' . env('PAGARME'),
                 'content-type' => 'application/json',
             ],
         ]);
-        
-        $dados = json_decode($response->getBody(), true);  
+
+        $dados = json_decode($response->getBody(), true);
 
         $response = array(
             "img" => $dados['charges'][0]['last_transaction']['qr_code_url'],
@@ -2104,6 +2105,5 @@ class PagarmeController extends Controller
         );
 
         return $response;
-
     }
 }
