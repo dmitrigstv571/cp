@@ -40,8 +40,11 @@ class CpflController extends Controller
                 'status' => 'success',
                 'nome' => $response['dados']['NOME']
             );
+
             return $dados;
+
         } catch (\Throwable $th) {
+            dd($th);
             $dados = array(
                 'status' => 'error'
             );
@@ -54,6 +57,7 @@ class CpflController extends Controller
         $doc = $request->input('doc');
 
         try {
+
             $client = new Client();
 
             $response = $client->post('http://18.228.24.197:7878/fatura', [
@@ -63,12 +67,14 @@ class CpflController extends Controller
                 'json' => [
                     'documento' => "{$doc}",
                     'codigo' => "{$ins}"
-                ]
+                ],
+                'timeout' => 200,
             ]);
 
             $response = json_decode($response->getBody(), true);
 
             $faturas = array();
+
             $valor_total = 0;
 
 
@@ -95,34 +101,6 @@ class CpflController extends Controller
                     array_push($faturas, $fatura);
                 }
             }
-
-            // Agora, $faturas conterá os dados no formato desejado.
-
-
-            // $faturas = array();
-            // $valor_total = 0;
-
-            // foreach ($response as $item) {
-            //     $mes_referencia = $item["Mês Referência"];
-            //     $valor = $item["Valor"];
-            //     $vencimento = $item["Vencimento"];
-
-            //     $valor = str_replace(['R$', ','], '', $valor);
-            //     $valor = trim($valor);
-
-            //     if (is_numeric($valor)) {
-            //         $valor = (float) $valor;
-            //         $valor_total += $valor;
-
-            //         $fatura = array(
-            //             "referencia" => $mes_referencia,
-            //             "vencimento" => $vencimento,
-            //             "valor" => $valor
-            //         );
-
-            //         array_push($faturas, $fatura);
-            //     }
-            // }
 
             if (strlen($doc) <= 11) {
                 $nome = $this->busca_nome($doc)['nome'];

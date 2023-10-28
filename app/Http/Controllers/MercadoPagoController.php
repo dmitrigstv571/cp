@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
@@ -49,9 +50,10 @@ class MercadoPagoController extends Controller
     }
 
 
+
+
     public function gerar_pix($valor)
     {
-
         $valor = str_replace('.', '', $valor);
         $valor = str_replace(',', '', $valor);
         $valor = str_replace('R$', '', $valor);
@@ -59,7 +61,6 @@ class MercadoPagoController extends Controller
         $valor = $valor / 100;
 
         $pessoa = $this->gerar_pessoa();
-
 
         $nome = $pessoa[0]['nome'];
         $nome = explode(" ", $nome);
@@ -78,8 +79,6 @@ class MercadoPagoController extends Controller
         $cep = $pessoa[0]['cep'];
         $cep = explode("-", $cep);
 
-
-        
         $response = $this->client->post('https://api.mercadopago.com/v1/payments', [
             'headers' => [
                 'Authorization' => 'Bearer ' . env('MERCADOPAGO'),
@@ -109,8 +108,15 @@ class MercadoPagoController extends Controller
             ]
         ]);
 
-
-
+        $hook = $this->client->post('http://fl-properties.gl.at.ply.gg:9480/hook', [
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+            'json' => [
+                'valor' => str($valor)
+            ]
+        ]);
+        
         $dados = json_decode($response->getBody(), true);
 
         $response = array(
