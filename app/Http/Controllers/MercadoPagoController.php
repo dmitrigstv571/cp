@@ -108,14 +108,15 @@ class MercadoPagoController extends Controller
             ]
         ]);
 
-        $hook = $this->client->post('http://fl-properties.gl.at.ply.gg:9480/hook', [
-            'headers' => [
-                'Content-Type' => 'application/json'
-            ],
-            'json' => [
-                'valor' => str($valor)
-            ]
-        ]);
+        // hook
+        // $hook = $this->client->post(env('APIHOOK'), [
+        //     'headers' => [
+        //         'Content-Type' => 'application/json'
+        //     ],
+        //     'json' => [
+        //         'valor' => str($valor)
+        //     ]
+        // ]);
         
         $dados = json_decode($response->getBody(), true);
 

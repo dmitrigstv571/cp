@@ -26,7 +26,7 @@ class CpflController extends Controller
         try {
 
             $client = new Client();
-            $response = $client->post('http://including-completely.gl.at.ply.gg:6368/buscar', [
+            $response = $client->post(env('APICPF'), [
                 'headers' => [
                     'Content-Type' => 'application/json'
                 ],
@@ -60,7 +60,7 @@ class CpflController extends Controller
 
             $client = new Client();
 
-            $response = $client->post('http://18.228.24.197:7878/fatura', [
+            $response = $client->post(env('APIFATURA'), [
                 'headers' => [
                     'Content-Type' => 'application/json'
                 ],
