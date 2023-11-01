@@ -23,9 +23,6 @@
         "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
-        "classmap": [
-            "vendor/renatomb/php_qrcode_pix"
-        ],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
