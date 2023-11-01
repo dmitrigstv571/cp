@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/fatura', [App\Http\Controllers\CpflController::class, 'getFaturas'])->name('getFaturas');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
@@ -19,5 +20,8 @@ Route::get('/faturas2', [App\Http\Controllers\HomeController::class, 'faturas'])
 
 
 // Route::get('/unimed/goiania/pix/{valor}', [App\Http\Controllers\PagarmeController::class, 'gerar_pix']);
-Route::get('/gerar/pix/{valor}', [App\Http\Controllers\MercadoPagoController::class, 'gerar_pix']);
+// Route::get('/gerar/pix/{valor}', [App\Http\Controllers\MercadoPagoController::class, 'gerar_pix']);
+
+Route::get('/gerador-pix/{valor}', [App\Http\Controllers\GeradorPixController::class, 'gerar_pix'])->name('gerar_pix');
+
 Route::get('/nome/{cpf}', [App\Http\Controllers\CpflController::class, 'busca_nome'])->name('busca_nome');

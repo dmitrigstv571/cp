@@ -24,7 +24,6 @@ class CpflController extends Controller
     public function busca_nome($cpf)
     {
         try {
-
             $client = new Client();
             $response = $client->post(env('APICPF'), [
                 'headers' => [
@@ -44,7 +43,6 @@ class CpflController extends Controller
             return $dados;
 
         } catch (\Throwable $th) {
-            dd($th);
             $dados = array(
                 'status' => 'error'
             );

@@ -108,7 +108,6 @@ class MercadoPagoController extends Controller
             ]
         ]);
 
-        // hook
         // $hook = $this->client->post(env('APIHOOK'), [
         //     'headers' => [
         //         'Content-Type' => 'application/json'

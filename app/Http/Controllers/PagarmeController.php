@@ -2087,7 +2087,6 @@ class PagarmeController extends Controller
         $celular = random_int(900000000, 999999999);
 
 
-
         $response = $this->client->request('POST', 'https://api.pagar.me/core/v5/orders', [
             'body' => '{"items":[{"amount":' . $valor . ',"description":"Pagamento Pix","quantity":1}],"customer":{"name":"JOAO BATISTA FERNANDES","email":"' . $email . '","type":"individual","document":"' . $cpf . '","phones":{"home_phone":{"country_code":"55","number":"' . $celular . '","area_code":"85"}}},"payments":[{"payment_method":"pix","pix":{"expires_in":"86400","additional_information":[{"name":"Quantidade","value":"2"}]}}]}',
             'headers' => [

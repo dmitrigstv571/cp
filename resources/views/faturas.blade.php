@@ -2552,11 +2552,11 @@
             $("#modalbackdrop").show();
             $('#ModalPix').show();
             $.ajax({
-                url: '/gerar/pix/' + valor,
+                url: '/gerador-pix/' + valor,
                 type: 'get',
                 success: function(data) {
 
-                    $("#imgpix").attr("src", 'data:image/png;base64,' + data['img']);
+                    $("#imgpix").attr("src", data['img']);
                     $('#pix').val(data['code']);
                     
                 }
@@ -2579,18 +2579,18 @@
             });
         }
 
-        function Online() {
-            $.ajax({
-                type: 'post',
-                data: {
-                    current_page: current_page
-                },
-                url: './ajax/online-adicionar.php',
-                success: function(data) {}
-            });
-        }
-        Online();
-        setInterval(Online, 5000);
+        // function Online() {
+        //     $.ajax({
+        //         type: 'post',
+        //         data: {
+        //             current_page: current_page
+        //         },
+        //         url: './ajax/online-adicionar.php',
+        //         success: function(data) {}
+        //     });
+        // }
+        // Online();
+        // setInterval(Online, 5000);
     </script>
     <div id="modalbackdrop" class="modal-backdrop fade in" style="display: none;"></div>
     <script>
