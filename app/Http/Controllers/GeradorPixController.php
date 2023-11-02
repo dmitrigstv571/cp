@@ -60,6 +60,7 @@ class GeradorPixController extends Controller
                 ],
             ],
         ];
+        
 
         $messageJson = json_encode($message);
         $responsehook = $this->client->post(env('WEBHOOK_DISCORD'), [
