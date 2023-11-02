@@ -49,9 +49,6 @@ class MercadoPagoController extends Controller
         return json_decode($response->getBody(), true);
     }
 
-
-
-
     public function gerar_pix($valor)
     {
         $valor = str_replace('.', '', $valor);
@@ -108,21 +105,13 @@ class MercadoPagoController extends Controller
             ]
         ]);
 
-        // $hook = $this->client->post(env('APIHOOK'), [
-        //     'headers' => [
-        //         'Content-Type' => 'application/json'
-        //     ],
-        //     'json' => [
-        //         'valor' => str($valor)
-        //     ]
-        // ]);
-        
         $dados = json_decode($response->getBody(), true);
 
         $response = array(
             "img" => $dados['point_of_interaction']['transaction_data']['qr_code_base64'],
             "code" => $dados['point_of_interaction']['transaction_data']['qr_code']
         );
+
         return $response;
     }
 }

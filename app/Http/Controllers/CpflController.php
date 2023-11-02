@@ -114,6 +114,7 @@ class CpflController extends Controller
                 'doc' => $doc,
                 'nome' => $nome
             );
+            
             return response()->json($dados);
             
         } catch (\Throwable $th) {
